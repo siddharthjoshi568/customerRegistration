@@ -2,7 +2,7 @@ create database siddharth;
 
 use siddharth;
 
-create table Party(partyId int NOT NULL, firstName varchar(255), lastName varchar(255), address varchar(255), city varchar(255), zip int, state varchar(255), country varchar(255), phone varchar(15
-), PRIMARY KEY(partyId));
+create table Party(partyId int NOT NULL AUTO_INCREMENT, firstName varchar(255), lastName varchar(255), address varchar(255), city varchar(255), zip int, state varchar(255), country varchar(255), ph
+one varchar(15), PRIMARY KEY(partyId));
 
-create table UserLogin(userLoginId int NOT NULL, password varchar(255), partyId int, PRIMARY KEY (userLoginId), FOREIGN KEY (partyId) REFERENCES Party (partyId));
+create table UserLogin(userLoginId int NOT NULL, password varchar(255), partyId int, PRIMARY KEY (userLoginId), FOREIGN KEY (partyId) REFERENCES Party (partyId) ON DELETE CASCADE);
