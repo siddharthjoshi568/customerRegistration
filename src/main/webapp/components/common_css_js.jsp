@@ -7,3 +7,17 @@
 <link rel="stylesheet" type="text/css"
 	href="https://codepen.io/skjha5993/pen/bXqWpR.css">
 <!-- Bootstrap cdn end -->
+
+<style>
+	.search-container{
+		position:relative;
+	}
+	.search-result{
+		position:absolute;
+		background:black;
+		width:100%;
+		padding:10px;
+		border:1px solid grey;
+		display:none;
+	}
+</style>

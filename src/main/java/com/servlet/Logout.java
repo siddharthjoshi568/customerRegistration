@@ -31,6 +31,17 @@ public class Logout extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		//fetching values from httpSession
+		HttpSession httpSession = request.getSession();
+		UserLoginBean ulb = (UserLoginBean) httpSession.getAttribute("current-user");
+		System.out.print(ulb+" Hello");
+		if(ulb != null)
+		{
+			httpSession.removeAttribute("currentUser");
+			response.sendRedirect("login.jsp");
+		}
+		
 	}
 
 	/**
@@ -38,15 +49,8 @@ public class Logout extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession httpSession = request.getSession();
-		UserLoginBean ulb = (UserLoginBean) httpSession.getAttribute("current-user");
 		
-		if(ulb != null)
-		{
-			httpSession.removeAttribute("currentUser");
-		}
-		response.sendRedirect("login.jsp");
-		//doGet(request, response);
+		doGet(request, response);
 	}
 
 }

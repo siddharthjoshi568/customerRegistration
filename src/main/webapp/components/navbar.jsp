@@ -24,7 +24,7 @@ if (ulb == null) {
 			<li class="nav-item active"><a class="nav-link" href="home.jsp">Home
 					<span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+			<li class="nav-item"><a class="nav-link" href="search.jsp">Search</a></li>
 			
 		</ul>
 		<%if(ulb==null){ %>
